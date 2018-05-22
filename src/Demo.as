@@ -80,7 +80,7 @@ package
                 if (ratio == 1)
                 {
                     // now would be a good time for a clean-up
-                    System.pauseForGCIfCollectionImminent(0);
+                    // System.pauseForGCIfCollectionImminent(0);
                     System.gc();
 
                     onComplete(assets);

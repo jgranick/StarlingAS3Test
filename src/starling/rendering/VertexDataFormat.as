@@ -11,6 +11,7 @@
 package starling.rendering
 {
     import flash.display3D.VertexBuffer3D;
+    import flash.errors.ArgumentError;
     import flash.utils.Dictionary;
 
     import starling.core.Starling;

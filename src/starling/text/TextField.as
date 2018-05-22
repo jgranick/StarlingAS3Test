@@ -11,10 +11,11 @@
 package starling.text
 {
     import flash.display3D.Context3DTextureFormat;
+    import flash.errors.ArgumentError;
     import flash.geom.Matrix;
     import flash.geom.Point;
     import flash.geom.Rectangle;
-    import flash.text.StyleSheet;
+    // import flash.text.StyleSheet;
     import flash.utils.Dictionary;
 
     import starling.core.Starling;
@@ -422,8 +423,8 @@ package starling.text
         /** An optional style sheet to be used for HTML text. For more information on style
          *  sheets, please refer to the StyleSheet class in the ActionScript 3 API reference.
          *  @default null */
-        public function get styleSheet():StyleSheet { return _options.styleSheet; }
-        public function set styleSheet(value:StyleSheet):void { _options.styleSheet = value; }
+        // public function get styleSheet():StyleSheet { return _options.styleSheet; }
+        // public function set styleSheet(value:StyleSheet):void { _options.styleSheet = value; }
 
         /** The padding (in points) that's added to the sides of text that's rendered to a Bitmap.
          *  If your text is truncated on the sides (which may happen if the font returns incorrect

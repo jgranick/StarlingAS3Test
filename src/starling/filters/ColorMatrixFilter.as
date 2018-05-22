@@ -196,6 +196,7 @@ package starling.filters
 
 import flash.display3D.Context3D;
 import flash.display3D.Context3DProgramType;
+import flash.errors.ArgumentError;
 
 import starling.rendering.FilterEffect;
 import starling.rendering.Program;

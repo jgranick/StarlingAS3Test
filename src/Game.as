@@ -17,8 +17,8 @@ package
     public class Game extends Sprite
     {
         // Embed the Ubuntu Font. Beware: the 'embedAsCFF'-part IS REQUIRED!!!
-        [Embed(source="../../demo/assets/fonts/Ubuntu-R.ttf", embedAsCFF="false", fontFamily="Ubuntu")]
-        private static const UbuntuRegular:Class;
+        // [Embed(source="../../demo/assets/fonts/Ubuntu-R.ttf", embedAsCFF="false", fontFamily="Ubuntu")]
+        // private static const UbuntuRegular:Class;
         
         private var _mainMenu:MainMenu;
         private var _currentScene:Scene;
@@ -43,7 +43,7 @@ package
         private function showMainMenu():void
         {
             // now would be a good time for a clean-up 
-            System.pauseForGCIfCollectionImminent(0);
+            // System.pauseForGCIfCollectionImminent(0);
             System.gc();
             
             if (_mainMenu == null)

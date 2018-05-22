@@ -11,6 +11,7 @@
 package starling.display
 {
     import flash.display3D.Context3DBlendFactor;
+    import flash.errors.ArgumentError;
 
     import starling.core.Starling;
 

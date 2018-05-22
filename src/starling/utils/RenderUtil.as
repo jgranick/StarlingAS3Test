@@ -17,6 +17,7 @@ package starling.utils
     import flash.display3D.Context3DTextureFilter;
     import flash.display3D.Context3DTextureFormat;
     import flash.display3D.Context3DWrapMode;
+    import flash.errors.ArgumentError;
     import flash.events.ErrorEvent;
     import flash.events.Event;
     import flash.utils.setTimeout;

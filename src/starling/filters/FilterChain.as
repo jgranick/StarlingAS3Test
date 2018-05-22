@@ -10,6 +10,7 @@
 
 package starling.filters
 {
+    import flash.errors.ArgumentError;
     import starling.events.Event;
     import starling.rendering.Painter;
     import starling.textures.Texture;

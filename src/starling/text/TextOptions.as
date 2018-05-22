@@ -10,7 +10,7 @@
 
 package starling.text
 {
-    import flash.text.StyleSheet;
+    // import flash.text.StyleSheet;
 
     import starling.core.Starling;
     import starling.events.Event;
@@ -32,7 +32,7 @@ package starling.text
         private var _isHtmlText:Boolean;
         private var _textureScale:Number;
         private var _textureFormat:String;
-        private var _styleSheet:StyleSheet;
+        // private var _styleSheet:StyleSheet;
         private var _padding:Number;
 
         /** Creates a new TextOptions instance with the given properties. */
@@ -56,7 +56,7 @@ package starling.text
             _isHtmlText = options._isHtmlText;
             _textureScale = options._textureScale;
             _textureFormat = options._textureFormat;
-            _styleSheet = options._styleSheet;
+            // _styleSheet = options._styleSheet;
             _padding = options._padding;
 
             dispatchEventWith(Event.CHANGE);
@@ -123,12 +123,12 @@ package starling.text
         }
 
         /** An optional style sheet to be used for HTML text. @default null */
-        public function get styleSheet():StyleSheet { return _styleSheet; }
-        public function set styleSheet(value:StyleSheet):void
-        {
-            _styleSheet = value;
-            dispatchEventWith(Event.CHANGE);
-        }
+        // public function get styleSheet():StyleSheet { return _styleSheet; }
+        // public function set styleSheet(value:StyleSheet):void
+        // {
+        //     _styleSheet = value;
+        //     dispatchEventWith(Event.CHANGE);
+        // }
 
         /** The scale factor of any textures that are created during text composition.
          *  The optimal value for this property is determined directly before rendering;

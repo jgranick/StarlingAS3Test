@@ -13,6 +13,8 @@ package starling.utils
     import flash.display.Bitmap;
     import flash.display.Loader;
     import flash.display.LoaderInfo;
+    import flash.errors.ArgumentError;
+    // import flash.errors.Error;
     import flash.events.HTTPStatusEvent;
     import flash.events.IOErrorEvent;
     import flash.events.ProgressEvent;
@@ -24,12 +26,12 @@ package starling.utils
     import flash.net.URLLoader;
     import flash.net.URLLoaderDataFormat;
     import flash.net.URLRequest;
-    import flash.system.ImageDecodingPolicy;
+    // import flash.system.ImageDecodingPolicy;
     import flash.system.LoaderContext;
     import flash.system.System;
     import flash.utils.ByteArray;
     import flash.utils.Dictionary;
-    import flash.utils.describeType;
+    // import flash.utils.describeType;
     import flash.utils.getQualifiedClassName;
     import flash.utils.setTimeout;
 
@@ -178,8 +180,8 @@ package starling.utils
             for each (var atlas:TextureAtlas in _atlases)
                 atlas.dispose();
             
-            for each (var xml:XML in _xmls)
-                System.disposeXML(xml);
+            // for each (var xml:XML in _xmls)
+            //     System.disposeXML(xml);
             
             for each (var byteArray:ByteArray in _byteArrays)
                 byteArray.clear();
@@ -375,7 +377,7 @@ package starling.utils
             if (name in _xmls && xml != _xmls[name])
             {
                 log("Warning: name was already in use; the previous XML will be replaced.");
-                System.disposeXML(_xmls[name]);
+                // System.disposeXML(_xmls[name]);
             }
 
             _xmls[name] = xml;
@@ -465,8 +467,8 @@ package starling.utils
         {
             log("Removing xml '"+ name + "'");
             
-            if (dispose && name in _xmls)
-                System.disposeXML(_xmls[name]);
+            // if (dispose && name in _xmls)
+            //     System.disposeXML(_xmls[name]);
             
             delete _xmls[name];
         }
@@ -563,18 +565,18 @@ package starling.utils
                 }
                 else if (rawAsset is Class)
                 {
-                    var typeXml:XML = describeType(rawAsset);
-                    var childNode:XML;
+                    // var typeXml:XML = describeType(rawAsset);
+                    // var childNode:XML;
                     
-                    if (_verbose)
-                        log("Looking for static embedded assets in '" + 
-                            (typeXml.@name).split("::").pop() + "'"); 
+                    // if (_verbose)
+                    //     log("Looking for static embedded assets in '" + 
+                    //         (typeXml.@name).split("::").pop() + "'"); 
                     
-                    for each (childNode in typeXml.constant.(@type == "Class"))
-                        enqueueWithName(rawAsset[childNode.@name], childNode.@name);
+                    // for each (childNode in typeXml.constant.(@type == "Class"))
+                    //     enqueueWithName(rawAsset[childNode.@name], childNode.@name);
                     
-                    for each (childNode in typeXml.variable.(@type == "Class"))
-                        enqueueWithName(rawAsset[childNode.@name], childNode.@name);
+                    // for each (childNode in typeXml.variable.(@type == "Class"))
+                    //     enqueueWithName(rawAsset[childNode.@name], childNode.@name);
                 }
                 else if (getQualifiedClassName(rawAsset) == "flash.filesystem::File")
                 {
@@ -762,7 +764,7 @@ package starling.utils
                     else log("Cannot create atlas: texture '" + name + "' is missing.");
 
                     if (_keepAtlasXmls) addXml(name, xml);
-                    else System.disposeXML(xml);
+                    // else System.disposeXML(xml);
                 }
                 else if (rootNode == "font")
                 {
@@ -779,7 +781,7 @@ package starling.utils
                     else log("Cannot create bitmap font: texture '" + name + "' is missing.");
 
                     if (_keepFontXmls) addXml(name, xml);
-                    else System.disposeXML(xml);
+                    // else System.disposeXML(xml);
                 }
                 else
                     throw new Error("XML contents not recognized: " + rootNode);
@@ -1093,7 +1095,7 @@ package starling.utils
                     case "gif":
                         var loaderContext:LoaderContext = new LoaderContext(_checkPolicyFile);
                         var loader:Loader = new Loader();
-                        loaderContext.imageDecodingPolicy = ImageDecodingPolicy.ON_LOAD;
+                        // loaderContext.imageDecodingPolicy = ImageDecodingPolicy.ON_LOAD;
                         loaderInfo = loader.contentLoaderInfo;
                         loaderInfo.addEventListener(IOErrorEvent.IO_ERROR, onIoError);
                         loaderInfo.addEventListener(Event.COMPLETE, onLoaderComplete);

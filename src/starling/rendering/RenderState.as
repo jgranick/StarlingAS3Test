@@ -13,6 +13,7 @@ package starling.rendering
     import flash.display3D.Context3DCompareMode;
     import flash.display3D.Context3DTriangleFace;
     import flash.display3D.textures.TextureBase;
+    import flash.errors.ArgumentError;
     import flash.geom.Matrix;
     import flash.geom.Matrix3D;
     import flash.geom.Rectangle;

@@ -11,6 +11,8 @@
 package starling.textures
 {
     import flash.display3D.Context3DTextureFormat;
+    import flash.errors.ArgumentError;
+    // import flash.errors.Error;
     import flash.utils.ByteArray;
 
     /** A parser for the ATF data format. */

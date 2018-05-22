@@ -5,6 +5,7 @@ package
     import flash.display.Shape;
     import flash.display.StageAlign;
     import flash.display.StageScaleMode;
+    // import flash.errors.Error;
     import flash.events.Event;
     import flash.utils.getDefinitionByName;
 

@@ -17,6 +17,8 @@ package starling.core
     import flash.display.StageScaleMode;
     import flash.display3D.Context3D;
     import flash.display3D.Context3DProfile;
+    import flash.errors.ArgumentError;
+    // import flash.errors.Error;
     import flash.errors.IllegalOperationError;
     import flash.events.ErrorEvent;
     import flash.events.Event;

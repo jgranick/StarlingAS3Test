@@ -12,6 +12,8 @@ package starling.textures
 {
     import flash.display.BitmapData;
     import flash.display3D.textures.TextureBase;
+    import flash.errors.ArgumentError;
+    // import flash.errors.Error;
     import flash.events.ErrorEvent;
     import flash.events.Event;
     import flash.geom.Matrix;
@@ -153,9 +155,9 @@ package starling.textures
                 try { base["uploadFromBitmapDataAsync"](source, mipLevel); }
                 catch (error:Error)
                 {
-                    if (error.errorID == 3708 || error.errorID == 1069)
-                        sAsyncUploadEnabled = false;
-                    else
+                    // if (error.errorID == 3708 || error.errorID == 1069)
+                    //     sAsyncUploadEnabled = false;
+                    // else
                         throw error;
                 }
             }

@@ -16,6 +16,7 @@ package starling.rendering
     import flash.display3D.Context3DStencilAction;
     import flash.display3D.Context3DTriangleFace;
     import flash.display3D.textures.TextureBase;
+    // import flash.errors.Error;
     import flash.errors.IllegalOperationError;
     import flash.geom.Matrix;
     import flash.geom.Matrix3D;

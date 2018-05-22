@@ -10,6 +10,7 @@
 
 package starling.text
 {
+    import flash.errors.ArgumentError;
     import flash.text.TextFormat;
 
     import starling.events.Event;

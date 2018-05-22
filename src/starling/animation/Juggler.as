@@ -10,6 +10,7 @@
 
 package starling.animation
 {
+    import flash.errors.ArgumentError;
     import flash.utils.Dictionary;
 
     import starling.core.starling_internal;

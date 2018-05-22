@@ -11,6 +11,8 @@
 
 package starling.animation
 {
+    import flash.errors.ArgumentError;
+    
     import starling.core.starling_internal;
     import starling.events.Event;
     import starling.events.EventDispatcher;

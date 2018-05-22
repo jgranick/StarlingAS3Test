@@ -10,6 +10,8 @@
 
 package starling.display
 {
+    import flash.errors.ArgumentError;
+    // import flash.errors.Error;
     import flash.errors.IllegalOperationError;
     import flash.media.Sound;
     import flash.media.SoundTransform;

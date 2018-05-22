@@ -10,6 +10,8 @@
 
 package starling.rendering
 {
+    import flash.errors.ArgumentError;
+    
     /** Holds the properties of a single attribute in a VertexDataFormat instance.
      *  The member variables must never be changed; they are only <code>public</code>
      *  for performance reasons. */

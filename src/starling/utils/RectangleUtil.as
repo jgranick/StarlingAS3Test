@@ -10,6 +10,7 @@
 
 package starling.utils
 {
+    import flash.errors.ArgumentError;
     import flash.geom.Matrix;
     import flash.geom.Matrix3D;
     import flash.geom.Point;

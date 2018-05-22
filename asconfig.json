@@ -14,6 +14,7 @@
             "js"
         ]
     },
+    "additionalOptions": "-warn-public-vars=false",
     "files":
     [
         "src/Main.as"

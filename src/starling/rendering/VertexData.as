@@ -12,6 +12,7 @@ package starling.rendering
 {
     import flash.display3D.Context3D;
     import flash.display3D.VertexBuffer3D;
+    import flash.errors.ArgumentError;
     import flash.errors.IllegalOperationError;
     import flash.geom.Matrix;
     import flash.geom.Matrix3D;

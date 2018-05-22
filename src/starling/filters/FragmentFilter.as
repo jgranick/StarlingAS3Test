@@ -11,6 +11,8 @@
 package starling.filters
 {
     import flash.display3D.Context3DTextureFormat;
+    import flash.errors.ArgumentError;
+    // import flash.errors.Error;
     import flash.errors.IllegalOperationError;
     import flash.geom.Matrix3D;
     import flash.geom.Rectangle;
@@ -602,6 +604,7 @@ package starling.filters
     }
 }
 
+// import flash.errors.Error;
 import flash.geom.Matrix;
 import flash.geom.Rectangle;
 

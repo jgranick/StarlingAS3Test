@@ -10,6 +10,8 @@
 
 package starling.geom
 {
+    import flash.errors.ArgumentError;
+    import flash.errors.RangeError;
     import flash.geom.Point;
     import flash.utils.getQualifiedClassName;
 
@@ -439,7 +441,8 @@ package starling.geom
     }
 }
 
-import flash.errors.IllegalOperationError;
+// import flash.errors.Error;
+// import flash.errors.IllegalOperationError;
 import flash.utils.getQualifiedClassName;
 
 import starling.geom.Polygon;
@@ -483,7 +486,8 @@ class ImmutablePolygon extends Polygon
     {
         var className:String = getQualifiedClassName(this).split("::").pop();
         var msg:String = className + " cannot be modified. Call 'clone' to create a mutable copy.";
-        return new IllegalOperationError(msg);
+        // return new IllegalOperationError(msg);
+        return new Error(msg);
     }
 }
 

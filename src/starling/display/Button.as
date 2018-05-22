@@ -10,6 +10,7 @@
 
 package starling.display
 {
+    import flash.errors.ArgumentError;
     import flash.geom.Rectangle;
     import flash.ui.Mouse;
     import flash.ui.MouseCursor;

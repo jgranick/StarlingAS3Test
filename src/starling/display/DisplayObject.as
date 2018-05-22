@@ -11,6 +11,7 @@
 package starling.display
 {
     import flash.display.BitmapData;
+    import flash.errors.ArgumentError;
     import flash.errors.IllegalOperationError;
     import flash.geom.Matrix;
     import flash.geom.Matrix3D;

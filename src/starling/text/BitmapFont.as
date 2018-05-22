@@ -10,6 +10,7 @@
 
 package starling.text
 {
+    import flash.errors.ArgumentError;
     import flash.geom.Rectangle;
     import flash.utils.Dictionary;
 

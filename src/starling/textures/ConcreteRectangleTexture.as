@@ -13,6 +13,7 @@ package starling.textures
     import flash.display.BitmapData;
     import flash.display3D.textures.RectangleTexture;
     import flash.display3D.textures.TextureBase;
+    // import flash.errors.Error;
     import flash.events.ErrorEvent;
     import flash.events.Event;
     import flash.utils.setTimeout;
@@ -85,9 +86,9 @@ package starling.textures
                 try { base["uploadFromBitmapDataAsync"](source); }
                 catch (error:Error)
                 {
-                    if (error.errorID == 3708 || error.errorID == 1069)
-                        sAsyncUploadEnabled = false; // feature or method not available
-                    else
+                    // if (error.errorID == 3708 || error.errorID == 1069)
+                    //     sAsyncUploadEnabled = false; // feature or method not available
+                    // else
                         throw error;
                 }
             }
