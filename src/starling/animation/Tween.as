@@ -13,7 +13,7 @@ package starling.animation
 {
     import flash.errors.ArgumentError;
     
-    import starling.core.starling_internal;
+    // import starling.core.starling_internal;
     import starling.events.Event;
     import starling.events.EventDispatcher;
     import starling.utils.Color;
@@ -437,7 +437,7 @@ package starling.animation
         private static var sTweenPool:Vector.<Tween> = new <Tween>[];
         
         /** @private */
-        starling_internal static function fromPool(target:Object, time:Number, 
+        /*starling_internal*/ public static function fromPool(target:Object, time:Number, 
                                                    transition:Object="linear"):Tween
         {
             if (sTweenPool.length) return sTweenPool.pop().reset(target, time, transition);
@@ -445,7 +445,7 @@ package starling.animation
         }
         
         /** @private */
-        starling_internal static function toPool(tween:Tween):void
+        /*starling_internal*/ public static function toPool(tween:Tween):void
         {
             // reset any object-references, to make sure we don't prevent any garbage collection
             tween._onStart = tween._onUpdate = tween._onRepeat = tween._onComplete = null;

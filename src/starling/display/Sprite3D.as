@@ -16,14 +16,14 @@ package starling.display
     import flash.geom.Point;
     import flash.geom.Vector3D;
 
-    import starling.core.starling_internal;
+    // import starling.core.starling_internal;
     import starling.events.Event;
     import starling.rendering.Painter;
     import starling.utils.MathUtil;
     import starling.utils.MatrixUtil;
     import starling.utils.rad2deg;
 
-    use namespace starling_internal;
+    // use namespace starling_internal;
 
     /** A container that allows you to position objects in three-dimensional space.
      *
@@ -161,7 +161,7 @@ package starling.display
             object.setIs3D(value);
         }
 
-        override starling_internal function updateTransformationMatrices(
+        override /*starling_internal*/ public function updateTransformationMatrices(
             x:Number, y:Number, pivotX:Number, pivotY:Number, scaleX:Number, scaleY:Number,
             skewX:Number, skewY:Number, rotation:Number, out:Matrix, out3D:Matrix3D):void
         {
@@ -172,7 +172,7 @@ package starling.display
                 _rotationX, _rotationY, rotation, out, out3D);
         }
 
-        starling_internal function updateTransformationMatrices3D(
+        /*starling_internal*/ public function updateTransformationMatrices3D(
             x:Number, y:Number, z:Number,
             pivotX:Number, pivotY:Number, pivotZ:Number,
             scaleX:Number, scaleY:Number, scaleZ:Number,

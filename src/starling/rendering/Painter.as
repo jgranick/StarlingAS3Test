@@ -24,7 +24,7 @@ package starling.rendering
     import flash.geom.Vector3D;
     import flash.utils.Dictionary;
 
-    import starling.core.starling_internal;
+    // import starling.core.starling_internal;
     import starling.display.BlendMode;
     import starling.display.DisplayObject;
     import starling.display.Mesh;
@@ -40,7 +40,7 @@ package starling.rendering
     import starling.utils.RenderUtil;
     import starling.utils.SystemUtil;
 
-    use namespace starling_internal;
+    // use namespace starling_internal;
 
     /** A class that orchestrates rendering of all Starling display objects.
      *

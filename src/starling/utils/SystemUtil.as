@@ -45,25 +45,25 @@ package starling.utils
             sPlatform = Capabilities.version.substr(0, 3);
             sVersion = Capabilities.version.substr(4);
 
-            try
-            {
-                var nativeAppClass:Object = getDefinitionByName("flash.desktop::NativeApplication");
-                var nativeApp:EventDispatcher = nativeAppClass["nativeApplication"] as EventDispatcher;
+            // try
+            // {
+            //     var nativeAppClass:Object = getDefinitionByName("flash.desktop::NativeApplication");
+            //     var nativeApp:EventDispatcher = nativeAppClass["nativeApplication"] as EventDispatcher;
 
-                nativeApp.addEventListener(Event.ACTIVATE, onActivate, false, 0, true);
-                nativeApp.addEventListener(Event.DEACTIVATE, onDeactivate, false, 0, true);
+            //     nativeApp.addEventListener(Event.ACTIVATE, onActivate, false, 0, true);
+            //     nativeApp.addEventListener(Event.DEACTIVATE, onDeactivate, false, 0, true);
 
-                var appDescriptor:XML = nativeApp["applicationDescriptor"];
-                var ns:Namespace = appDescriptor.namespace();
-                var ds:String = appDescriptor.ns::initialWindow.ns::depthAndStencil.toString().toLowerCase();
+            //     var appDescriptor:XML = nativeApp["applicationDescriptor"];
+            //     var ns:Namespace = appDescriptor.namespace();
+            //     var ds:String = appDescriptor.ns::initialWindow.ns::depthAndStencil.toString().toLowerCase();
 
-                sSupportsDepthAndStencil = (ds == "true");
-                sAIR = true;
-            }
-            catch (e:Error)
-            {
+            //     sSupportsDepthAndStencil = (ds == "true");
+            //     sAIR = true;
+            // }
+            // catch (e:Error)
+            // {
                 sAIR = false;
-            }
+            // }
         }
         
         private static function onActivate(event:Object):void

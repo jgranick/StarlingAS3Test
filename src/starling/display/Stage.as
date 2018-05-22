@@ -20,7 +20,7 @@ package starling.display
     import flash.geom.Vector3D;
 
     import starling.core.Starling;
-    import starling.core.starling_internal;
+    // import starling.core.starling_internal;
     import starling.events.EnterFrameEvent;
     import starling.events.Event;
     import starling.filters.FragmentFilter;
@@ -29,7 +29,7 @@ package starling.display
     import starling.utils.MatrixUtil;
     import starling.utils.RectangleUtil;
 
-    use namespace starling_internal;
+    // use namespace starling_internal;
     
     /** Dispatched when the Flash container is resized. */
     [Event(name="resize", type="starling.events.ResizeEvent")]

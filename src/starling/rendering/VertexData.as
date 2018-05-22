@@ -211,7 +211,8 @@ package starling.rendering
                 if (target._numVertices < targetVertexID + numVertices)
                     target._numVertices = targetVertexID + numVertices;
 
-                target._tinted ||= _tinted;
+                //target._tinted ||= _tinted;
+                if (!target._tinted) target._tinted = _tinted;
 
                 // In this case, it's fastest to copy the complete range in one call
                 // and then overwrite only the transformed positions.
@@ -284,8 +285,8 @@ package starling.rendering
             if (targetAttribute == null)
                 throw new ArgumentError("Attribute '" + attrName + "' not found in target data");
 
-            if (sourceAttribute.isColor)
-                target._tinted ||= _tinted;
+            if (sourceAttribute.isColor && !target._tinted)
+                target._tinted = _tinted;
 
             copyAttributeTo_internal(target, targetVertexID, matrix,
                     sourceAttribute, targetAttribute, vertexID, numVertices);

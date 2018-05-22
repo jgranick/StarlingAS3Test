@@ -100,45 +100,45 @@ package starling.textures
          *  Override this method to add support for additional file formats. */
         protected function parseAtlasData(data:*):void
         {
-            if (data is XML) parseAtlasXml(data as XML);
-            else throw new ArgumentError("TextureAtlas only supports XML data");
+            // if (data is XML) parseAtlasXml(data as XML);
+            // else throw new ArgumentError("TextureAtlas only supports XML data");
         }
 
         /** This function is called by 'parseAtlasData' for XML data. It will parse an XML in
          *  Starling's default atlas file format. Override this method to create custom parsing
          *  logic (e.g. to support additional attributes). */
-        protected function parseAtlasXml(atlasXml:XML):void
+        protected function parseAtlasXml(atlasXml:/*XML*/*):void
         {
-            var scale:Number = _atlasTexture.scale;
-            var region:Rectangle = new Rectangle();
-            var frame:Rectangle  = new Rectangle();
+            // var scale:Number = _atlasTexture.scale;
+            // var region:Rectangle = new Rectangle();
+            // var frame:Rectangle  = new Rectangle();
             
-            for each (var subTexture:XML in atlasXml.SubTexture)
-            {
-                var name:String        = StringUtil.clean(subTexture.@name);
-                var x:Number           = parseFloat(subTexture.@x) / scale || 0.0;
-                var y:Number           = parseFloat(subTexture.@y) / scale || 0.0;
-                var width:Number       = parseFloat(subTexture.@width)  / scale || 0.0;
-                var height:Number      = parseFloat(subTexture.@height) / scale || 0.0;
-                var frameX:Number      = parseFloat(subTexture.@frameX) / scale || 0.0;
-                var frameY:Number      = parseFloat(subTexture.@frameY) / scale || 0.0;
-                var frameWidth:Number  = parseFloat(subTexture.@frameWidth)  / scale || 0.0;
-                var frameHeight:Number = parseFloat(subTexture.@frameHeight) / scale || 0.0;
-                var pivotX:Number      = parseFloat(subTexture.@pivotX) / scale || 0.0;
-                var pivotY:Number      = parseFloat(subTexture.@pivotY) / scale || 0.0;
-                var rotated:Boolean    = StringUtil.parseBoolean(subTexture.@rotated);
+            // for each (var subTexture:XML in atlasXml.SubTexture)
+            // {
+            //     var name:String        = StringUtil.clean(subTexture.@name);
+            //     var x:Number           = parseFloat(subTexture.@x) / scale || 0.0;
+            //     var y:Number           = parseFloat(subTexture.@y) / scale || 0.0;
+            //     var width:Number       = parseFloat(subTexture.@width)  / scale || 0.0;
+            //     var height:Number      = parseFloat(subTexture.@height) / scale || 0.0;
+            //     var frameX:Number      = parseFloat(subTexture.@frameX) / scale || 0.0;
+            //     var frameY:Number      = parseFloat(subTexture.@frameY) / scale || 0.0;
+            //     var frameWidth:Number  = parseFloat(subTexture.@frameWidth)  / scale || 0.0;
+            //     var frameHeight:Number = parseFloat(subTexture.@frameHeight) / scale || 0.0;
+            //     var pivotX:Number      = parseFloat(subTexture.@pivotX) / scale || 0.0;
+            //     var pivotY:Number      = parseFloat(subTexture.@pivotY) / scale || 0.0;
+            //     var rotated:Boolean    = StringUtil.parseBoolean(subTexture.@rotated);
 
-                region.setTo(x, y, width, height);
-                frame.setTo(frameX, frameY, frameWidth, frameHeight);
+            //     region.setTo(x, y, width, height);
+            //     frame.setTo(frameX, frameY, frameWidth, frameHeight);
 
-                if (frameWidth > 0 && frameHeight > 0)
-                    addRegion(name, region, frame, rotated);
-                else
-                    addRegion(name, region, null,  rotated);
+            //     if (frameWidth > 0 && frameHeight > 0)
+            //         addRegion(name, region, frame, rotated);
+            //     else
+            //         addRegion(name, region, null,  rotated);
 
-                if (pivotX != 0 || pivotY != 0)
-                    Image.bindPivotPointToTexture(getTexture(name), pivotX, pivotY);
-            }
+            //     if (pivotX != 0 || pivotY != 0)
+            //         Image.bindPivotPointToTexture(getTexture(name), pivotX, pivotY);
+            // }
         }
         
         /** Retrieves a SubTexture by name. Returns <code>null</code> if it is not found. */

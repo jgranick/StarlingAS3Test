@@ -14,7 +14,7 @@ package starling.display
     import flash.geom.Point;
     import flash.geom.Rectangle;
 
-    import starling.core.starling_internal;
+    // import starling.core.starling_internal;
     import starling.geom.Polygon;
     import starling.rendering.IndexData;
     import starling.rendering.Painter;
@@ -26,7 +26,7 @@ package starling.display
     import starling.utils.MeshUtil;
     import starling.utils.execute;
 
-    use namespace starling_internal;
+    // use namespace starling_internal;
 
     /** The base class for all tangible (non-container) display objects, spawned up by a number
      *  of triangles.

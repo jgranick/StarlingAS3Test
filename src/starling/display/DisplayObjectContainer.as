@@ -17,7 +17,7 @@ package starling.display
     import flash.system.Capabilities;
     import flash.utils.getQualifiedClassName;
 
-    import starling.core.starling_internal;
+    // import starling.core.starling_internal;
     import starling.errors.AbstractClassError;
     import starling.events.Event;
     import starling.filters.FragmentFilter;
@@ -25,7 +25,7 @@ package starling.display
     import starling.rendering.Painter;
     import starling.utils.MatrixUtil;
 
-    use namespace starling_internal;
+    // use namespace starling_internal;
     
     /**
      *  A DisplayObjectContainer represents a collection of display objects.

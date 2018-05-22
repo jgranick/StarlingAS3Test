@@ -552,7 +552,7 @@ package starling.display
     }
 }
 
-import starling.display.Image;
+// import starling.display.Image;
 import starling.utils.execute;
 
 class SetupAutomator

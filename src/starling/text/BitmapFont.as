@@ -131,68 +131,68 @@ package starling.text
          *  Override this method to support different file formats. */
         protected function parseFontData(data:*):void
         {
-            if (data is XML) parseFontXml(data);
-            else throw new ArgumentError("BitmapFont only supports XML data");
+            // if (data is XML) parseFontXml(data);
+            // else throw new ArgumentError("BitmapFont only supports XML data");
         }
         
-        private function parseFontXml(fontXml:XML):void
+        private function parseFontXml(fontXml:/*XML*/*):void
         {
-            var scale:Number = _texture.scale;
-            var frame:Rectangle = _texture.frame;
-            var frameX:Number = frame ? frame.x : 0;
-            var frameY:Number = frame ? frame.y : 0;
+            // var scale:Number = _texture.scale;
+            // var frame:Rectangle = _texture.frame;
+            // var frameX:Number = frame ? frame.x : 0;
+            // var frameY:Number = frame ? frame.y : 0;
             
-            _name = StringUtil.clean(fontXml.info.@face);
-            _size = parseFloat(fontXml.info.@size) / scale;
-            _lineHeight = parseFloat(fontXml.common.@lineHeight) / scale;
-            _baseline = parseFloat(fontXml.common.@base) / scale;
+            // _name = StringUtil.clean(fontXml.info.@face);
+            // _size = parseFloat(fontXml.info.@size) / scale;
+            // _lineHeight = parseFloat(fontXml.common.@lineHeight) / scale;
+            // _baseline = parseFloat(fontXml.common.@base) / scale;
             
-            if (fontXml.info.@smooth.toString() == "0")
-                smoothing = TextureSmoothing.NONE;
+            // if (fontXml.info.@smooth.toString() == "0")
+            //     smoothing = TextureSmoothing.NONE;
             
-            if (_size <= 0)
-            {
-                trace("[Starling] Warning: invalid font size in '" + _name + "' font.");
-                _size = (_size == 0.0 ? 16.0 : _size * -1.0);
-            }
+            // if (_size <= 0)
+            // {
+            //     trace("[Starling] Warning: invalid font size in '" + _name + "' font.");
+            //     _size = (_size == 0.0 ? 16.0 : _size * -1.0);
+            // }
 
-            if (fontXml.distanceField.length())
-            {
-                _distanceFieldSpread = parseFloat(fontXml.distanceField.@distanceRange);
-                _type = fontXml.distanceField.@fieldType == "msdf" ?
-                    BitmapFontType.MULTI_CHANNEL_DISTANCE_FIELD : BitmapFontType.DISTANCE_FIELD;
-            }
-            else
-            {
-                _distanceFieldSpread = 0.0;
-                _type = BitmapFontType.STANDARD;
-            }
+            // if (fontXml.distanceField.length())
+            // {
+            //     _distanceFieldSpread = parseFloat(fontXml.distanceField.@distanceRange);
+            //     _type = fontXml.distanceField.@fieldType == "msdf" ?
+            //         BitmapFontType.MULTI_CHANNEL_DISTANCE_FIELD : BitmapFontType.DISTANCE_FIELD;
+            // }
+            // else
+            // {
+            //     _distanceFieldSpread = 0.0;
+            //     _type = BitmapFontType.STANDARD;
+            // }
             
-            for each (var charElement:XML in fontXml.chars.char)
-            {
-                var id:int = parseInt(charElement.@id);
-                var xOffset:Number  = parseFloat(charElement.@xoffset)  / scale;
-                var yOffset:Number  = parseFloat(charElement.@yoffset)  / scale;
-                var xAdvance:Number = parseFloat(charElement.@xadvance) / scale;
+            // for each (var charElement:XML in fontXml.chars.char)
+            // {
+            //     var id:int = parseInt(charElement.@id);
+            //     var xOffset:Number  = parseFloat(charElement.@xoffset)  / scale;
+            //     var yOffset:Number  = parseFloat(charElement.@yoffset)  / scale;
+            //     var xAdvance:Number = parseFloat(charElement.@xadvance) / scale;
                 
-                var region:Rectangle = new Rectangle();
-                region.x = parseFloat(charElement.@x) / scale + frameX;
-                region.y = parseFloat(charElement.@y) / scale + frameY;
-                region.width  = parseFloat(charElement.@width)  / scale;
-                region.height = parseFloat(charElement.@height) / scale;
+            //     var region:Rectangle = new Rectangle();
+            //     region.x = parseFloat(charElement.@x) / scale + frameX;
+            //     region.y = parseFloat(charElement.@y) / scale + frameY;
+            //     region.width  = parseFloat(charElement.@width)  / scale;
+            //     region.height = parseFloat(charElement.@height) / scale;
                 
-                var texture:Texture = Texture.fromTexture(_texture, region);
-                var bitmapChar:BitmapChar = new BitmapChar(id, texture, xOffset, yOffset, xAdvance); 
-                addChar(id, bitmapChar);
-            }
+            //     var texture:Texture = Texture.fromTexture(_texture, region);
+            //     var bitmapChar:BitmapChar = new BitmapChar(id, texture, xOffset, yOffset, xAdvance); 
+            //     addChar(id, bitmapChar);
+            // }
             
-            for each (var kerningElement:XML in fontXml.kernings.kerning)
-            {
-                var first:int  = parseInt(kerningElement.@first);
-                var second:int = parseInt(kerningElement.@second);
-                var amount:Number = parseFloat(kerningElement.@amount) / scale;
-                if (second in _chars) getChar(second).addKerning(first, amount);
-            }
+            // for each (var kerningElement:XML in fontXml.kernings.kerning)
+            // {
+            //     var first:int  = parseInt(kerningElement.@first);
+            //     var second:int = parseInt(kerningElement.@second);
+            //     var amount:Number = parseFloat(kerningElement.@amount) / scale;
+            //     if (second in _chars) getChar(second).addKerning(first, amount);
+            // }
         }
         
         /** Returns a single bitmap char with a certain character ID. */

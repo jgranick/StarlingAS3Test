@@ -272,7 +272,7 @@ package starling.utils
         }
         
         /** Returns an XML with a certain name, or null if it's not found. */
-        public function getXml(name:String):XML
+        public function getXml(name:String):/*XML*/*
         {
             return _xmls[name];
         }
@@ -370,7 +370,7 @@ package starling.utils
         /** Register an XML object under a certain name. It will be available right away.
          *  If the name was already taken, the existing XML will be disposed and replaced
          *  by the new one. */
-        public function addXml(name:String, xml:XML):void
+        public function addXml(name:String, xml:/*XML*/*):void
         {
             log("Adding XML '" + name + "'");
             
@@ -665,7 +665,7 @@ package starling.utils
 
             var i:int;
             var canceled:Boolean = false;
-            var xmls:Vector.<XML> = new <XML>[];
+            var xmls:Vector.</*XML*/*> = /*new <XML>[]*/new Vector.<*>();
             var assetInfos:Array = _queue.concat();
             var assetCount:int = _queue.length;
             var assetProgress:Array = [];
@@ -732,62 +732,62 @@ package starling.utils
                 // have to be available for other XMLs. Texture atlases are processed first:
                 // that way, their textures can be referenced, too.
                 
-                xmls.sort(function(a:XML, b:XML):int {
-                    return a.localName() == "TextureAtlas" ? -1 : 1;
-                });
+                // xmls.sort(function(a:XML, b:XML):int {
+                //     return a.localName() == "TextureAtlas" ? -1 : 1;
+                // });
 
-                setTimeout(processXml, 1, 0);
+                // setTimeout(processXml, 1, 0);
             }
 
             function processXml(index:int):void
             {
-                if (canceled) return;
-                else if (index == xmls.length)
-                {
-                    finish();
-                    return;
-                }
+                // if (canceled) return;
+                // else if (index == xmls.length)
+                // {
+                //     finish();
+                //     return;
+                // }
 
-                var texture:Texture;
-                var name:String, fontName:String;
-                var xml:XML = xmls[index];
-                var rootNode:String = xml.localName();
-                var xmlProgress:Number = (index + 1) / (xmls.length + 1);
-                var bitmapFont:BitmapFont;
+                // var texture:Texture;
+                // var name:String, fontName:String;
+                // var xml:XML = xmls[index];
+                // var rootNode:String = xml.localName();
+                // var xmlProgress:Number = (index + 1) / (xmls.length + 1);
+                // var bitmapFont:BitmapFont;
 
-                if (rootNode == "TextureAtlas")
-                {
-                    name = getName(xml.@imagePath.toString());
-                    texture = getTexture(name);
+                // if (rootNode == "TextureAtlas")
+                // {
+                //     name = getName(xml.@imagePath.toString());
+                //     texture = getTexture(name);
 
-                    if (texture) addTextureAtlas(name, new TextureAtlas(texture, xml));
-                    else log("Cannot create atlas: texture '" + name + "' is missing.");
+                //     if (texture) addTextureAtlas(name, new TextureAtlas(texture, xml));
+                //     else log("Cannot create atlas: texture '" + name + "' is missing.");
 
-                    if (_keepAtlasXmls) addXml(name, xml);
-                    // else System.disposeXML(xml);
-                }
-                else if (rootNode == "font")
-                {
-                    name = getName(xml.pages.page.@file.toString());
-                    fontName = _registerBitmapFontsWithFontFace ? xml.info.@face.toString() : name;
-                    texture = getTexture(name);
+                //     if (_keepAtlasXmls) addXml(name, xml);
+                //     // else System.disposeXML(xml);
+                // }
+                // else if (rootNode == "font")
+                // {
+                //     name = getName(xml.pages.page.@file.toString());
+                //     fontName = _registerBitmapFontsWithFontFace ? xml.info.@face.toString() : name;
+                //     texture = getTexture(name);
 
-                    if (texture)
-                    {
-                        bitmapFont = new BitmapFont(texture, xml);
-                        addBitmapFont(fontName, bitmapFont);
-                        TextField.registerCompositor(bitmapFont, fontName);
-                    }
-                    else log("Cannot create bitmap font: texture '" + name + "' is missing.");
+                //     if (texture)
+                //     {
+                //         bitmapFont = new BitmapFont(texture, xml);
+                //         addBitmapFont(fontName, bitmapFont);
+                //         TextField.registerCompositor(bitmapFont, fontName);
+                //     }
+                //     else log("Cannot create bitmap font: texture '" + name + "' is missing.");
 
-                    if (_keepFontXmls) addXml(name, xml);
-                    // else System.disposeXML(xml);
-                }
-                else
-                    throw new Error("XML contents not recognized: " + rootNode);
+                //     if (_keepFontXmls) addXml(name, xml);
+                //     // else System.disposeXML(xml);
+                // }
+                // else
+                //     throw new Error("XML contents not recognized: " + rootNode);
 
-                onProgress(PROGRESS_PART_ASSETS + PROGRESS_PART_XMLS * xmlProgress);
-                setTimeout(processXml, 1, index + 1);
+                // onProgress(PROGRESS_PART_ASSETS + PROGRESS_PART_XMLS * xmlProgress);
+                // setTimeout(processXml, 1, index + 1);
             }
             
             function cancel():void
@@ -815,7 +815,7 @@ package starling.utils
         }
         
         private function processRawAsset(name:String, rawAsset:Object, options:TextureOptions,
-                                         xmls:Vector.<XML>, onProgress:Function, onComplete:Function):void
+                                         xmls:Vector.</*XML*/*>, onProgress:Function, onComplete:Function):void
         {
             var canceled:Boolean = false;
             
@@ -827,7 +827,7 @@ package starling.utils
                 var texture:Texture;
                 var bytes:ByteArray;
                 var object:Object = null;
-                var xml:XML = null;
+                var xml:/*XML*/* = null;
                 
                 // the 'current' instance might have changed by now
                 // if we're running in a set-up with multiple instances.
@@ -846,17 +846,17 @@ package starling.utils
                     addSound(name, asset as Sound);
                     onComplete();
                 }
-                else if (asset is XML)
-                {
-                    xml = asset as XML;
+                // else if (asset is XML)
+                // {
+                //     xml = asset as XML;
                     
-                    if (xml.localName() == "TextureAtlas" || xml.localName() == "font")
-                        xmls.push(xml);
-                    else
-                        addXml(name, xml);
+                //     if (xml.localName() == "TextureAtlas" || xml.localName() == "font")
+                //         xmls.push(xml);
+                //     else
+                //         addXml(name, xml);
 
-                    onComplete();
-                }
+                //     onComplete();
+                // }
                 else if (_starling.context.driverInfo == "Disposed")
                 {
                     log("Context lost while processing assets, retrying ...");
@@ -951,14 +951,14 @@ package starling.utils
                     }
                     else if (byteArrayStartsWith(bytes, "<"))
                     {
-                        try { xml = new XML(bytes); }
-                        catch (e:Error)
-                        {
-                            log("Could not parse XML: " + e.message);
-                            dispatchEventWith(Event.PARSE_ERROR, false, name);
-                        }
+                        // try { xml = new XML(bytes); }
+                        // catch (e:Error)
+                        // {
+                        //     log("Could not parse XML: " + e.message);
+                        //     dispatchEventWith(Event.PARSE_ERROR, false, name);
+                        // }
 
-                        process(xml);
+                        // process(xml);
                         bytes.clear();
                     }
                     else

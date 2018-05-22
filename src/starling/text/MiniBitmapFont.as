@@ -174,20 +174,21 @@ package starling.text
             return bmpData;
         }
         
-        public static function get xml():XML
+        public static function get xml():/*XML*/*
         {
-            var xml:XML;
-            var xmlBytes:ByteArray = new ByteArray();
-            var length:uint = XML_DATA.length;
+            // var xml:XML;
+            // var xmlBytes:ByteArray = new ByteArray();
+            // var length:uint = XML_DATA.length;
 
-            for (var i:uint=0; i<length; ++i)
-                xmlBytes.writeUnsignedInt(XML_DATA[i]);
+            // for (var i:uint=0; i<length; ++i)
+            //     xmlBytes.writeUnsignedInt(XML_DATA[i]);
 
-            xmlBytes.uncompress();
-            xml = XML(xmlBytes.readUTF());
-            xmlBytes.clear();
+            // xmlBytes.uncompress();
+            // xml = XML(xmlBytes.readUTF());
+            // xmlBytes.clear();
 
-            return xml;
+            // return xml;
+            return null;
         }
     }
 }
