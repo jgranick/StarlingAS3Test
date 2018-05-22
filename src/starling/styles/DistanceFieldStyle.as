@@ -84,7 +84,7 @@ package starling.styles
     {
         /** The vertex format expected by this style. */
         public static const VERTEX_FORMAT:VertexDataFormat =
-            MeshStyle.VERTEX_FORMAT.extend(
+            VertexDataFormat.fromString("position:float2").extend("texCoords:float2").extend("color:bytes4").extend(
                 "basic:bytes4, extended:bytes4, outerColor:bytes4");
 
         /** Basic distance field rendering, without additional effects. */

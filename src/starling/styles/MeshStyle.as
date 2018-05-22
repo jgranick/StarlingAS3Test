@@ -94,7 +94,7 @@ package starling.styles
     public class MeshStyle extends EventDispatcher
     {
         /** The vertex format expected by this style (the same as found in the MeshEffect-class). */
-        public static const VERTEX_FORMAT:VertexDataFormat = MeshEffect.VERTEX_FORMAT;
+        public static const VERTEX_FORMAT:VertexDataFormat = VertexDataFormat.fromString("position:float2").extend("texCoords:float2").extend("color:bytes4");
 
         private var _type:Class;
         private var _target:Mesh;
