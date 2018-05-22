@@ -12,7 +12,7 @@
   "scripts": {
     "build": "npm run build:dev",
     "build:dev": "cpx 'assets/**/*.*' bin/js-debug/assets && cpx node_modules/openfl/dist/openfl.min.js bin/js-debug && cpx node_modules/howler/dist/howler.min.js bin/js-debug && cpx node_modules/pako/dist/pako.min.js bin/js-debug && asconfigc --debug=true",
-    "build:prod": "cpx 'assets/**/*.*' bin/js-release/assets && cpx node_modules/openfl/dist/openfl.min.js bin/js-release && cpx node_modules/howler/dist/howler.min.js bin/js-release && cpx node_modules/pako/dist/pako.min.js bin/js-debug && asconfigc --debug=false",
+    "build:prod": "cpx 'assets/**/*.*' bin/js-release/assets && cpx node_modules/openfl/dist/openfl.min.js bin/js-release && cpx node_modules/howler/dist/howler.min.js bin/js-release && cpx node_modules/pako/dist/pako.min.js bin/js-release && asconfigc --debug=false",
     "start": "npm run start:dev",
     "start:dev": "npm run build:dev && royale serve:debug",
     "start:prod": "npm run build:prod && royale serve:release"

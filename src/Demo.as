@@ -29,6 +29,7 @@ package
 
         public function Demo()
         {
+            super ();
             if (stage) start();
             else addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
         }
