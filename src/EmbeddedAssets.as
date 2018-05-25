@@ -15,33 +15,33 @@ package
         
         // Texture Atlas
         
-        [Embed(source="../../demo/assets/textures/1x/atlas.xml", mimeType="application/octet-stream")]
-        public static const atlas_xml:Class;
+        // [Embed(source="../../demo/assets/textures/1x/atlas.xml", mimeType="application/octet-stream")]
+        // public static const atlas_xml:Class;
         
-        [Embed(source="../../demo/assets/textures/1x/atlas.png")]
-        public static const atlas:Class;
+        // [Embed(source="../../demo/assets/textures/1x/atlas.png")]
+        // public static const atlas:Class;
 
         // Bitmap textures
 
-        [Embed(source="../../demo/assets/textures/1x/background.jpg")]
-        public static const background:Class;
+        // [Embed(source="../../demo/assets/textures/1x/background.jpg")]
+        // public static const background:Class;
 
         // Compressed textures
         
-        [Embed(source = "../../demo/assets/textures/1x/compressed_texture.atf", mimeType="application/octet-stream")]
-        public static const compressed_texture:Class;
+        // [Embed(source = "../../demo/assets/textures/1x/compressed_texture.atf", mimeType="application/octet-stream")]
+        // public static const compressed_texture:Class;
         
         // Bitmap Fonts
         
-        [Embed(source="../../demo/assets/fonts/1x/desyrel.fnt", mimeType="application/octet-stream")]
-        public static const desyrel_fnt:Class;
+        // [Embed(source="../../demo/assets/fonts/1x/desyrel.fnt", mimeType="application/octet-stream")]
+        // public static const desyrel_fnt:Class;
         
-        [Embed(source = "../../demo/assets/fonts/1x/desyrel.png")]
-        public static const desyrel:Class;
+        // [Embed(source = "../../demo/assets/fonts/1x/desyrel.png")]
+        // public static const desyrel:Class;
         
         // Sounds
         
-        [Embed(source="../../demo/assets/audio/wing_flap.mp3")]
-        public static const wing_flap:Class;
+        // [Embed(source="../../demo/assets/audio/wing_flap.mp3")]
+        // public static const wing_flap:Class;
     }
 }
