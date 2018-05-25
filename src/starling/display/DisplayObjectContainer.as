@@ -15,6 +15,7 @@ package starling.display
     import flash.geom.Rectangle;
     import flash.system.Capabilities;
     import flash.utils.getQualifiedClassName;
+    import flash.errors.ArgumentError;
 
     import starling.core.starling_internal;
     import starling.errors.AbstractClassError;

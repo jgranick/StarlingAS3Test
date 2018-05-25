@@ -15,6 +15,7 @@ package starling.utils
     import flash.geom.Point;
     import flash.geom.Rectangle;
     import flash.geom.Vector3D;
+    import flash.errors.ArgumentError;
 
     import starling.errors.AbstractClassError;
 

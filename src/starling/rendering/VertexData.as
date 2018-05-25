@@ -20,6 +20,7 @@ package starling.rendering
     import flash.geom.Vector3D;
     import flash.utils.ByteArray;
     import flash.utils.Endian;
+    import flash.errors.ArgumentError;
 
     import starling.core.Starling;
     import starling.errors.MissingContextError;

@@ -12,6 +12,7 @@ package starling.text
 {
     import flash.geom.Rectangle;
     import flash.utils.Dictionary;
+    import flash.errors.ArgumentError;
 
     import starling.display.Image;
     import starling.display.MeshBatch;

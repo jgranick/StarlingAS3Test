@@ -15,6 +15,7 @@ package starling.display
     import flash.geom.Point;
     import flash.geom.Rectangle;
     import flash.geom.Vector3D;
+    import flash.errors.ArgumentError;
 
     import starling.rendering.IndexData;
     import starling.rendering.VertexData;

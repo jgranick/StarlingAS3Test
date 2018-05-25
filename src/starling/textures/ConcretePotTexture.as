@@ -19,6 +19,7 @@ package starling.textures
     import flash.geom.Rectangle;
     import flash.utils.ByteArray;
     import flash.utils.setTimeout;
+    import flash.errors.ArgumentError;
 
     import starling.core.Starling;
     import starling.utils.MathUtil;

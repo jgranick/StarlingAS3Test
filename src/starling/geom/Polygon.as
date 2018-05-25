@@ -12,6 +12,7 @@ package starling.geom
 {
     import flash.geom.Point;
     import flash.utils.getQualifiedClassName;
+    import flash.errors.ArgumentError;
 
     import starling.rendering.IndexData;
     import starling.rendering.VertexData;

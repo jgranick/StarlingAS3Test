@@ -13,6 +13,7 @@ package starling.display
     import flash.geom.Rectangle;
     import flash.ui.Mouse;
     import flash.ui.MouseCursor;
+    import flash.errors.ArgumentError;
 
     import starling.events.Event;
     import starling.events.Touch;

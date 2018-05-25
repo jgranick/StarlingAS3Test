@@ -11,6 +11,7 @@
 package starling.text
 {
     import flash.text.TextFormat;
+    import flash.errors.ArgumentError;
 
     import starling.events.Event;
     import starling.events.EventDispatcher;

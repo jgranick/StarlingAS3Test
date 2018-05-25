@@ -46,7 +46,7 @@ package starling.textures
 
             if (!_disposed)
             {
-                videoBase.attachCamera(null);
+                // videoBase.attachCamera(null);
                 videoBase.attachNetStream(null);
                 _disposed = true;
             }

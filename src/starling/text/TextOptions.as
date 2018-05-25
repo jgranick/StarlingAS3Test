@@ -10,7 +10,7 @@
 
 package starling.text
 {
-    import flash.text.StyleSheet;
+    // import flash.text.StyleSheet;
 
     import starling.core.Starling;
     import starling.events.Event;
@@ -32,7 +32,7 @@ package starling.text
         private var _isHtmlText:Boolean;
         private var _textureScale:Number;
         private var _textureFormat:String;
-        private var _styleSheet:StyleSheet;
+        private var _styleSheet:*;
         private var _padding:Number;
 
         /** Creates a new TextOptions instance with the given properties. */
@@ -123,8 +123,8 @@ package starling.text
         }
 
         /** An optional style sheet to be used for HTML text. @default null */
-        public function get styleSheet():StyleSheet { return _styleSheet; }
-        public function set styleSheet(value:StyleSheet):void
+        public function get styleSheet():* { return _styleSheet; }
+        public function set styleSheet(value:*):void
         {
             _styleSheet = value;
             dispatchEventWith(Event.CHANGE);

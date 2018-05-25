@@ -14,6 +14,7 @@ package starling.filters
     import flash.errors.IllegalOperationError;
     import flash.geom.Matrix3D;
     import flash.geom.Rectangle;
+    import flash.errors.ArgumentError;
 
     import starling.core.Starling;
     import starling.core.starling_internal;

@@ -13,6 +13,7 @@ package starling.display
     import flash.errors.IllegalOperationError;
     import flash.media.Sound;
     import flash.media.SoundTransform;
+    import flash.errors.ArgumentError;
 
     import starling.animation.IAnimatable;
     import starling.events.Event;

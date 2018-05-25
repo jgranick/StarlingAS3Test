@@ -20,7 +20,7 @@ package starling.utils
     import flash.events.ErrorEvent;
     import flash.events.Event;
     import flash.utils.setTimeout;
-
+import flash.errors.ArgumentError;
     import starling.core.Starling;
     import starling.errors.AbstractClassError;
     import starling.textures.Texture;

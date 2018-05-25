@@ -20,11 +20,12 @@ package starling.textures
     import flash.geom.Matrix;
     import flash.geom.Point;
     import flash.geom.Rectangle;
-    import flash.media.Camera;
+    // import flash.media.Camera;
     import flash.net.NetStream;
     import flash.system.Capabilities;
     import flash.utils.ByteArray;
     import flash.utils.getQualifiedClassName;
+    import flash.errors.ArgumentError;
 
     import starling.core.Starling;
     import starling.errors.AbstractClassError;
@@ -445,7 +446,7 @@ package starling.textures
          *  @param onComplete will be executed when the texture is ready. May contain a parameter
          *                 of type 'Texture'.
          */
-        public static function fromCamera(camera:Camera, scale:Number=1,
+        public static function fromCamera(camera:*, scale:Number=1,
                                           onComplete:Function=null):Texture
         {
             return fromVideoAttachment("Camera", camera, scale, onComplete);

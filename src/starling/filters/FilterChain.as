@@ -14,6 +14,7 @@ package starling.filters
     import starling.rendering.Painter;
     import starling.textures.Texture;
     import starling.utils.Padding;
+    import flash.errors.ArgumentError;
 
     /** The FilterChain allows you to combine several filters into one. The filters will be
      *  processed in the given order, the number of draw calls per filter adding up.

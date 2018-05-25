@@ -17,6 +17,7 @@ package starling.rendering
     import flash.geom.Matrix3D;
     import flash.geom.Rectangle;
     import flash.geom.Vector3D;
+    import flash.errors.ArgumentError;
 
     import starling.display.BlendMode;
     import starling.textures.Texture;

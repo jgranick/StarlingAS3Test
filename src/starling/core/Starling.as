@@ -18,6 +18,7 @@ package starling.core
     import flash.display3D.Context3D;
     import flash.display3D.Context3DProfile;
     import flash.errors.IllegalOperationError;
+    import flash.errors.ArgumentError;
     import flash.events.ErrorEvent;
     import flash.events.Event;
     import flash.events.KeyboardEvent;

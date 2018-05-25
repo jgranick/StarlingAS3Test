@@ -12,6 +12,7 @@ package starling.display
 {
     import flash.geom.Point;
     import flash.geom.Rectangle;
+    import flash.errors.ArgumentError;
 
     import starling.core.starling_internal;
     import starling.geom.Polygon;

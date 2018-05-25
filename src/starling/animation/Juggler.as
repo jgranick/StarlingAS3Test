@@ -11,6 +11,7 @@
 package starling.animation
 {
     import flash.utils.Dictionary;
+    import flash.errors.ArgumentError;
 
     import starling.core.starling_internal;
     import starling.events.Event;
