@@ -13,6 +13,8 @@ package starling.geom
     import flash.geom.Point;
     import flash.utils.getQualifiedClassName;
     import flash.errors.ArgumentError;
+    import flash.errors.Error;
+    import flash.errors.IllegalOperationError;
 
     import starling.rendering.IndexData;
     import starling.rendering.VertexData;
@@ -442,6 +444,7 @@ package starling.geom
 
 import flash.errors.IllegalOperationError;
 import flash.utils.getQualifiedClassName;
+import flash.errors.Error;
 
 import starling.geom.Polygon;
 import starling.rendering.IndexData;

@@ -14,6 +14,7 @@ package starling.textures
     import flash.display3D.textures.TextureBase;
     import flash.events.ErrorEvent;
     import flash.events.Event;
+    import flash.errors.Error;
     import flash.geom.Matrix;
     import flash.geom.Point;
     import flash.geom.Rectangle;
