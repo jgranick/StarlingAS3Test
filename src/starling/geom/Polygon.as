@@ -484,7 +484,8 @@ class ImmutablePolygon extends Polygon
     {
         var className:String = getQualifiedClassName(this).split("::").pop();
         var msg:String = className + " cannot be modified. Call 'clone' to create a mutable copy.";
-        return new IllegalOperationError(msg);
+        // return new IllegalOperationError(msg);
+        return null;
     }
 }
 

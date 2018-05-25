@@ -154,9 +154,9 @@ package starling.textures
                 try { base["uploadFromBitmapDataAsync"](source, mipLevel); }
                 catch (error:Error)
                 {
-                    if (error.errorID == 3708 || error.errorID == 1069)
-                        sAsyncUploadEnabled = false;
-                    else
+                    // if (error.errorID == 3708 || error.errorID == 1069)
+                    //     sAsyncUploadEnabled = false;
+                    // else
                         throw error;
                 }
             }
