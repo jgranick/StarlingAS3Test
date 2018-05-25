@@ -5,15 +5,14 @@
         "output": "./",
         "html-template": "template.html",
         "source-path": [
+            "node_modules/openfl/lib",
             "src"
-        ],
-        "external-library-path": [
-            "node_modules/openfl/dist/openfl.swc"
         ],
         "targets": [
             "js"
         ]
     },
+    "additionalOptions": "-warn-public-vars=false",
     "files":
     [
         "src/Main.as"
