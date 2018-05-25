@@ -10,7 +10,7 @@
 
 package starling.animation
 {
-    import starling.core.starling_internal;
+    
     import starling.events.Event;
     import starling.events.EventDispatcher;
 
@@ -120,7 +120,7 @@ package starling.animation
         private static var sPool:Vector.<DelayedCall> = new <DelayedCall>[];
         
         /** @private */
-        starling_internal static function fromPool(call:Function, delay:Number, 
+        public static function fromPool(call:Function, delay:Number, 
                                                    args:Array=null):DelayedCall
         {
             if (sPool.length) return sPool.pop().reset(call, delay, args);
@@ -128,7 +128,7 @@ package starling.animation
         }
         
         /** @private */
-        starling_internal static function toPool(delayedCall:DelayedCall):void
+        public static function toPool(delayedCall:DelayedCall):void
         {
             // reset any object-references, to make sure we don't prevent any garbage collection
             delayedCall._callback = null;

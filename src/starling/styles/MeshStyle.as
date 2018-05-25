@@ -14,7 +14,7 @@ package starling.styles
     import flash.geom.Matrix;
     import flash.geom.Point;
 
-    import starling.core.starling_internal;
+    
     import starling.display.Mesh;
     import starling.events.Event;
     import starling.events.EventDispatcher;
@@ -263,7 +263,7 @@ package starling.styles
         // internal methods
 
         /** @private */
-        starling_internal function setTarget(target:Mesh=null, vertexData:VertexData=null,
+        public function setTarget(target:Mesh=null, vertexData:VertexData=null,
                                              indexData:IndexData=null):void
         {
             if (_target != target)

@@ -17,7 +17,7 @@ package starling.filters
     import flash.errors.ArgumentError;
 
     import starling.core.Starling;
-    import starling.core.starling_internal;
+    
     import starling.display.DisplayObject;
     import starling.display.Stage;
     import starling.events.Event;
@@ -571,7 +571,7 @@ package starling.filters
         // internal methods
 
         /** @private */
-        starling_internal function setTarget(target:DisplayObject):void
+        public function setTarget(target:DisplayObject):void
         {
             if (target != _target)
             {

@@ -15,14 +15,14 @@ package starling.filters
     import flash.geom.Rectangle;
 
     import starling.core.Starling;
-    import starling.core.starling_internal;
+    
     import starling.display.DisplayObject;
     import starling.textures.SubTexture;
     import starling.textures.Texture;
     import starling.utils.MathUtil;
     import starling.utils.Pool;
 
-    use namespace starling_internal;
+    
 
     /** @private
      *

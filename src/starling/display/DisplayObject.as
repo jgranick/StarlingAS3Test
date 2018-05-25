@@ -24,7 +24,7 @@ package starling.display
     import flash.errors.ArgumentError;
 
     import starling.core.Starling;
-    import starling.core.starling_internal;
+    
     import starling.errors.AbstractClassError;
     import starling.errors.AbstractMethodError;
     import starling.events.Event;
@@ -39,7 +39,7 @@ package starling.display
     import starling.utils.MatrixUtil;
     import starling.utils.SystemUtil;
 
-    use namespace starling_internal;
+    
 
     /** Dispatched when an object is added to a parent. */
     [Event(name="added", type="starling.events.Event")]
@@ -563,7 +563,7 @@ package starling.display
         // internal methods
         
         /** @private */
-        starling_internal function setParent(value:DisplayObjectContainer):void
+        public function setParent(value:DisplayObjectContainer):void
         {
             // check for a recursion
             var ancestor:DisplayObject = value;
@@ -632,7 +632,7 @@ package starling.display
         /** @private Makes sure the object is not drawn from cache in the next frame.
          *  This method is meant to be called only from <code>Painter.finishFrame()</code>,
          *  since it requires rendering to be concluded. */
-        starling_internal function excludeFromCache():void
+        public function excludeFromCache():void
         {
             var object:DisplayObject = this;
             var max:uint = 0xffffffff;
@@ -647,14 +647,14 @@ package starling.display
         // helpers
 
         /** @private */
-        starling_internal function setTransformationChanged():void
+        public function setTransformationChanged():void
         {
             _transformationChanged = true;
             setRequiresRedraw();
         }
 
         /** @private */
-        starling_internal function updateTransformationMatrices(
+        public function updateTransformationMatrices(
             x:Number, y:Number, pivotX:Number, pivotY:Number, scaleX:Number, scaleY:Number,
             skewX:Number, skewY:Number, rotation:Number, out:Matrix, out3D:Matrix3D):void
         {

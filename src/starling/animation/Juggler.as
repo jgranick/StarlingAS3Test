@@ -13,7 +13,7 @@ package starling.animation
     import flash.utils.Dictionary;
     import flash.errors.ArgumentError;
 
-    import starling.core.starling_internal;
+    
     import starling.events.Event;
     import starling.events.EventDispatcher;
 
@@ -240,7 +240,7 @@ package starling.animation
         {
             if (call == null) throw new ArgumentError("call must not be null");
             
-            var delayedCall:DelayedCall = DelayedCall.starling_internal::fromPool(call, delay, args);
+            var delayedCall:DelayedCall = DelayedCall.public::fromPool(call, delay, args);
             delayedCall.addEventListener(Event.REMOVE_FROM_JUGGLER, onPooledDelayedCallComplete);
             return add(delayedCall);
         }
@@ -255,7 +255,7 @@ package starling.animation
         {
             if (call == null) throw new ArgumentError("call must not be null");
             
-            var delayedCall:DelayedCall = DelayedCall.starling_internal::fromPool(call, interval, args);
+            var delayedCall:DelayedCall = DelayedCall.public::fromPool(call, interval, args);
             delayedCall.repeatCount = repeatCount;
             delayedCall.addEventListener(Event.REMOVE_FROM_JUGGLER, onPooledDelayedCallComplete);
             return add(delayedCall);
@@ -263,7 +263,7 @@ package starling.animation
         
         private function onPooledDelayedCallComplete(event:Event):void
         {
-            DelayedCall.starling_internal::toPool(event.target as DelayedCall);
+            DelayedCall.public::toPool(event.target as DelayedCall);
         }
         
         /** Utilizes a tween to animate the target object over <code>time</code> seconds. Internally,
@@ -302,7 +302,7 @@ package starling.animation
         {
             if (target == null) throw new ArgumentError("target must not be null");
 
-            var tween:Tween = Tween.starling_internal::fromPool(target, time);
+            var tween:Tween = Tween.public::fromPool(target, time);
             
             for (var property:String in properties)
             {
@@ -322,7 +322,7 @@ package starling.animation
         
         private function onPooledTweenComplete(event:Event):void
         {
-            Tween.starling_internal::toPool(event.target as Tween);
+            Tween.public::toPool(event.target as Tween);
         }
         
         /** Advances all objects by a certain time (in seconds). */

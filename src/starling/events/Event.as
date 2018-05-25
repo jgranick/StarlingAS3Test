@@ -12,10 +12,10 @@ package starling.events
 {
     import flash.utils.getQualifiedClassName;
 
-    import starling.core.starling_internal;
+    
     import starling.utils.StringUtil;
 
-    use namespace starling_internal;
+    
 
     /** Event objects are passed as parameters to event listeners when an event occurs.  
      *  This is Starling's version of the Flash Event class. 
@@ -163,21 +163,21 @@ package starling.events
         // event pooling
         
         /** @private */
-        starling_internal static function fromPool(type:String, bubbles:Boolean=false, data:Object=null):Event
+        public static function fromPool(type:String, bubbles:Boolean=false, data:Object=null):Event
         {
             if (sEventPool.length) return sEventPool.pop().reset(type, bubbles, data);
             else return new Event(type, bubbles, data);
         }
         
         /** @private */
-        starling_internal static function toPool(event:Event):void
+        public static function toPool(event:Event):void
         {
             event._data = event._target = event._currentTarget = null;
             sEventPool[sEventPool.length] = event; // avoiding 'push'
         }
         
         /** @private */
-        starling_internal function reset(type:String, bubbles:Boolean=false, data:Object=null):Event
+        public function reset(type:String, bubbles:Boolean=false, data:Object=null):Event
         {
             _type = type;
             _bubbles = bubbles;

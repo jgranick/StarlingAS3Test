@@ -10,10 +10,10 @@
 
 package starling.events
 {
-    import starling.core.starling_internal;
+    
     import starling.display.DisplayObject;
 
-    use namespace starling_internal;
+    
     
     /** A TouchEvent is triggered either by touch or mouse input.  
      *  

@@ -14,7 +14,7 @@ package starling.textures
     import flash.geom.Matrix;
     import flash.geom.Rectangle;
 
-    import starling.core.starling_internal;
+    
 
     /** A SubTexture represents a section of another texture. This is achieved solely by
      *  manipulation of texture coordinates, making the class very efficient. 
@@ -52,7 +52,7 @@ package starling.textures
                                    ownsParent:Boolean=false, frame:Rectangle=null,
                                    rotated:Boolean=false, scaleModifier:Number=1)
         {
-            starling_internal::setTo(parent, region, ownsParent, frame, rotated, scaleModifier);
+            public::setTo(parent, region, ownsParent, frame, rotated, scaleModifier);
         }
 
         /** @private
@@ -62,7 +62,7 @@ package starling.textures
          *  the texture is not accessible to the outside, this can be overruled in order to avoid
          *  allocations.</p>
          */
-        starling_internal function setTo(parent:Texture, region:Rectangle=null,
+        public function setTo(parent:Texture, region:Rectangle=null,
                                          ownsParent:Boolean=false, frame:Rectangle=null,
                                          rotated:Boolean=false, scaleModifier:Number=1):void
         {
